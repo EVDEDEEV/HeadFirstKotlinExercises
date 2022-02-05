@@ -1,5 +1,5 @@
 fun main() {
-    val mShoppingList = mutableListOf("Tea", "Eggs", "Milk")
+    var mShoppingList = mutableListOf("Tea", "Eggs", "Milk")
     println("mShoppingList original: $mShoppingList")
     val extraShopping = listOf("Cookies", "Sugar", "Eggs")
     mShoppingList.addAll(extraShopping)
@@ -11,4 +11,12 @@ fun main() {
     println("mShoppingLust sorted:$mShoppingList")
     mShoppingList.reverse()
     println("mShoppingList reversed: $mShoppingList")
+
+    val mShoppingSet = mShoppingList.toMutableSet()
+    println("mShoppingSet: $mShoppingSet")
+    val moreShopping = setOf("Chives", "Spinach", "Milk")
+    mShoppingSet.addAll(moreShopping)
+    println("mShoppingSet items added: $mShoppingSet")
+    mShoppingList = mShoppingSet.toMutableList()
+    println("mShoppingList new version: $mShoppingList")
 }
